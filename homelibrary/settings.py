@@ -83,7 +83,7 @@ DATABASES = {
        'NAME': 'devlocal',
        'USER': 'devuser',
        'PASSWORD': '@L20nFAR003#HP',
-       'HOST': 'localhost',
+       'HOST': '127.0.0.1',
        'PORT': '5432',
    }
 }
