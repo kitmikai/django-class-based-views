@@ -1,0 +1,11 @@
+# Pycache
+__pycache__/
+
+# Migrations folder
+migrations/
+
+# Environment files
+cbv_venv/
+.env
+.git
+
