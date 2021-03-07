@@ -16,7 +16,7 @@
       {% block sidebar %}
         <ul class="sidebar-nav">
           {% if user.is_authenticated %}
-            {% if 'catalog.add_bookinstance' in user.get_all_permissions %}
+            {% if 'catalog.can_mark_returned' in user.get_all_permissions %}
               <li><a href="{% url 'index' %}">Home</a></li>
               <li><a href="{% url 'books' %}">All books</a></li>
               <li><a href="{% url 'authors' %}">All authors</a></li>
