@@ -1,8 +1,9 @@
+import datetime
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseDirect
+from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 from catalog.models import Book, Author, BookInstance, Genre
@@ -115,7 +116,7 @@ class LoanedBooksLibrarianListView(PermissionRequiredMixin, generic.ListView):
     model = BookInstance
     template_name = 'catalog/bookinstance_list_borrowed_librarian.html'
     paginate_by = 10
-    permission_required = 'catalog.add_bookinstance'
+    permission_required = 'catalog.can_mark_returned'
 
 
     def get_queryset(self):
